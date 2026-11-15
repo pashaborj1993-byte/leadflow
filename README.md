@@ -27,6 +27,8 @@ The agent never sends a message, promises a price, or changes a lead's stage by 
 
 The policy layer runs after the reasoning layer. A high-confidence recommendation can still be blocked by policy: for example, any request mentioning regulated work, security work, or a custom price requires review. Later we can replace the deterministic reasoner with an LLM and add RAG, without changing the policy or approval boundary.
 
+The workflow has three separate owners: the workflow core records state, the agent proposes a next step, and a named human approves or rejects it with a reason. Only after that decision should a later integration send email, create a CRM record, or issue a quote.
+
 ## Run tests
 
 Requires Node 22+.
